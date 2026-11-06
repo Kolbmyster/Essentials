@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Unit5B_MiniDiorama.ma
-//Last modified: Fri, Nov 06, 2026 01:06:19 AM
+//Last modified: Fri, Nov 06, 2026 01:31:55 AM
 //Codeset: 1252
 file -rdi 1 -ns "FireplaceMesh1" -rfn "FireplaceMeshRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Github/Essentials/DAGV1100and1200/Maya//assets/Unit5B_Mini Diorama/FireplaceMesh.ma";
@@ -79,18 +79,18 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "109AEF77-4209-19B1-C28F-94A6579BB660";
+fileInfo "UUID" "6925CAF5-40AA-19E3-6EBE-CD999C8C0F59";
 createNode transform -s -n "persp";
 	rename -uid "56019B3C-45D8-5969-F778-9DAA09440A41";
-	setAttr ".t" -type "double3" 36.079254458551802 27.920639403767179 36.057884984504597 ;
-	setAttr ".r" -type "double3" -23.264389681492915 -314.19999999990461 4.5621254828247719e-15 ;
+	setAttr ".t" -type "double3" 37.526605785038718 28.82594411937179 37.32390342495944 ;
+	setAttr ".r" -type "double3" -23.264389681496091 -314.59999999989026 2.2648585432353077e-15 ;
 	setAttr ".rp" -type "double3" 2.6645352591003757e-15 8.8817841970012523e-16 0 ;
 	setAttr ".rpt" -type "double3" -2.2097364335436824e-15 9.6459148045877339e-16 -2.0033453083068613e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C6F47C82-4AEB-2A81-D397-3682F0166CDE";
 	setAttr -k off ".v";
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 62.544467281361236;
+	setAttr ".coi" 59.896552442806637;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
