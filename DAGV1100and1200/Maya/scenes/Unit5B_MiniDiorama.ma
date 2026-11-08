@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Unit5B_MiniDiorama.ma
-//Last modified: Fri, Nov 06, 2026 01:31:55 AM
+//Last modified: Sun, Nov 08, 2026 12:20:55 AM
 //Codeset: 1252
 file -rdi 1 -ns "FireplaceMesh1" -rfn "FireplaceMeshRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Github/Essentials/DAGV1100and1200/Maya//assets/Unit5B_Mini Diorama/FireplaceMesh.ma";
@@ -79,22 +79,22 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "6925CAF5-40AA-19E3-6EBE-CD999C8C0F59";
+fileInfo "UUID" "2354BA69-452D-8887-43B9-3B85B830B383";
 createNode transform -s -n "persp";
 	rename -uid "56019B3C-45D8-5969-F778-9DAA09440A41";
-	setAttr ".t" -type "double3" 37.526605785038718 28.82594411937179 37.32390342495944 ;
-	setAttr ".r" -type "double3" -23.264389681496091 -314.59999999989026 2.2648585432353077e-15 ;
+	setAttr ".t" -type "double3" 58.562836199346577 42.130226672500996 84.900645932301785 ;
+	setAttr ".r" -type "double3" -17.864389681396549 31.799999999992028 0 ;
 	setAttr ".rp" -type "double3" 2.6645352591003757e-15 8.8817841970012523e-16 0 ;
 	setAttr ".rpt" -type "double3" -2.2097364335436824e-15 9.6459148045877339e-16 -2.0033453083068613e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C6F47C82-4AEB-2A81-D397-3682F0166CDE";
 	setAttr -k off ".v";
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 59.896552442806637;
+	setAttr ".coi" 101.75006407198862;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.21242440322810197 17.935874938964844 -3.865840705432638 ;
+	setAttr ".tp" -type "double3" 22.626556992235212 30.773764413625702 -25.180175214802311 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -n "imagePlane1" -p "perspShape";
 	rename -uid "BFB162B0-41D9-6489-0ADF-E48C546F5797";
@@ -104,6 +104,7 @@ createNode imagePlane -n "imagePlaneShape1" -p "imagePlane1";
 	setAttr ".fc" 151;
 	setAttr ".imn" -type "string" "C:/Users/techn/OneDrive - Utah Valley University/DAGV 1200 - 3D Modeling Essentials/diorama.jpg";
 	setAttr ".cov" -type "short2" 1024 1024 ;
+	setAttr ".dm" 0;
 	setAttr ".dic" yes;
 	setAttr ".w" 10.24;
 	setAttr ".h" 10.24;
@@ -155,6 +156,23 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
+createNode transform -n "Shot_Camera";
+	rename -uid "A5921666-4ADF-346E-3566-A8B4FC4C7FF2";
+	setAttr ".t" -type "double3" 35.572094443471443 28.276976272184886 36.201519045934184 ;
+	setAttr ".r" -type "double3" -24.000000000000238 45.600000000000321 0 ;
+createNode camera -n "Shot_CameraShape" -p "Shot_Camera";
+	rename -uid "D14A3EE9-4E78-7BF4-0FEF-F8B7E5469313";
+	setAttr -k off ".v";
+	setAttr ".rnd" no;
+	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
+	setAttr ".ff" 0;
+	setAttr ".ovr" 1.3;
+	setAttr ".coi" 61.463909742509671;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "camera1";
+	setAttr ".den" -type "string" "camera1_depth";
+	setAttr ".man" -type "string" "camera1_mask";
+	setAttr ".dr" yes;
 createNode transform -n "FloorMesh";
 	rename -uid "66A0E0BB-4BA5-C8C4-4662-979E669D8252";
 createNode mesh -n "FloorMeshShape" -p "FloorMesh";
@@ -38876,21 +38894,93 @@ createNode mesh -n "Plant2:revolvedSurfaceShape3" -p "Plant2:revolvedSurface3";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "directionalLight1";
+	rename -uid "41B6A284-4C1C-1238-F41B-71B23E1297FE";
+	setAttr ".t" -type "double3" 28.116541531411258 40.319142806589518 -13.091754771205453 ;
+	setAttr ".r" -type "double3" -50.408463714587661 126.15764024232654 -28.179392359671898 ;
+createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
+	rename -uid "6FEE30A5-4BF1-12DF-A7A9-D3945A1CEEF5";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 1 0.82944703 0.59099996 ;
+	setAttr ".ai_exposure" 2.5342466831207275;
+	setAttr ".ai_angle" 10;
+createNode transform -n "spotLight1";
+	rename -uid "D9598FCE-4EC6-75AD-2A55-FEBCB8CD99D7";
+	setAttr ".t" -type "double3" 3.4549835233810526 2.1285174737168795 -7.8665526524651037 ;
+	setAttr ".r" -type "double3" 9.2740123012184057 -6.5890207870712532 -3.3506579526757014 ;
+createNode spotLight -n "spotLightShape1" -p "spotLight1";
+	rename -uid "3DFB181D-4D4F-7210-E1AC-628281F71C31";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 0.55656111 0.16706653 0.025044927 ;
+	setAttr ".col" 1.0796301724419128;
+	setAttr ".ca" 145.78830334739618;
+	setAttr ".pa" 10;
+	setAttr ".ai_exposure" 8.1854000091552734;
+createNode transform -n "spotLight2";
+	rename -uid "FAACBC62-4CAD-98AC-4D51-83891DFADDA0";
+	setAttr ".t" -type "double3" 2.1522240352449553 4.726418422980923 -8.1726031223329354 ;
+	setAttr ".r" -type "double3" -43.207417571048531 -21.362330304270223 -3.5743627375033205 ;
+createNode spotLight -n "spotLightShape2" -p "spotLight2";
+	rename -uid "58627270-46C8-03CF-F15F-ACB0A6F9D1DC";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 0.55203623 0.19888362 0.035882223 ;
+	setAttr ".col" 9.9999997473787516e-06;
+	setAttr ".ca" 31.768413266181867;
+	setAttr ".pa" 10;
+	setAttr ".ai_exposure" 11.002793312072754;
+createNode camera -n "cameraShape1" -p "spotLight2";
+	rename -uid "DAF3A48A-42D0-E762-1CC0-CFAD181C0B71";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".fl" 12.000000000000002;
+	setAttr ".ncp" 0.001;
+	setAttr ".fcp" 1000;
+	setAttr ".coi" 9.9999997473787499e-06;
+	setAttr ".ow" 0.1389897526027403;
+createNode transform -n "areaLight1";
+	rename -uid "6A8130B2-48BF-5643-2C2C-CBB1459EC838";
+	setAttr ".t" -type "double3" 0 11.19189376507444 24.170587577828279 ;
+	setAttr ".s" -type "double3" 19.101463552275046 19.101463552275046 1 ;
+createNode areaLight -n "areaLightShape1" -p "areaLight1";
+	rename -uid "6FCC02A8-4754-0548-D9A7-14A6EAB7D223";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 1 0.9703396 0.80199999 ;
+	setAttr ".ai_exposure" 9.908015251159668;
+createNode transform -n "areaLight2";
+	rename -uid "A3BB654F-497D-61D9-650B-D5BD925A4150";
+	setAttr ".t" -type "double3" 22.792707478543168 11.322742254000431 0 ;
+	setAttr ".r" -type "double3" 0 88.654600859476474 0 ;
+	setAttr ".s" -type "double3" 16.127200409579604 16.127200409579604 1 ;
+createNode areaLight -n "areaLightShape2" -p "areaLight2";
+	rename -uid "3982C9A6-44C4-5C11-5907-089C232FED11";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 1 0.92195851 0.68400002 ;
+	setAttr ".ai_exposure" 9.9554147720336914;
+createNode transform -n "areaLight3";
+	rename -uid "F07574A3-49A1-9374-1617-FE99FCACD685";
+	setAttr ".t" -type "double3" 0 29.45921309089487 0 ;
+	setAttr ".r" -type "double3" 91.765719427721749 -5.963540027744092e-16 -2.7072898537893431 ;
+	setAttr ".s" -type "double3" 18.731258955507087 18.731258955507087 1 ;
+createNode areaLight -n "areaLightShape3" -p "areaLight3";
+	rename -uid "FC2A31DE-405C-6AC9-B784-518F9EAD92A6";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 1 0.93899924 0.75300002 ;
+	setAttr ".ai_exposure" 9.7208995819091797;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "FF762E90-4849-B789-E2D7-6A8006BF2527";
+	rename -uid "31C84431-4D57-0247-3B49-F09CDE7F6834";
 	setAttr -s 38 ".lnk";
 	setAttr -s 38 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "2A57B20C-432A-972B-4A16-D5AC57D2808D";
+	rename -uid "2442025E-4DF1-2B45-8C9A-31B7BBD40F01";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D685EEC3-4DED-3A1D-2C3F-0E857D9B85D2";
+	rename -uid "028C93E7-4BCE-78D7-0AB0-E5B68DA7D7DF";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B532760D-44E6-F715-A478-8BAF83DF1D68";
+	rename -uid "840B8322-4896-695F-DB93-73B49A7C9A6E";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "CD44A69E-46BD-D48E-4079-3A91B5C71762";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "349F17A0-4C2B-F9C7-F903-8D88B81784AF";
+	rename -uid "614F5212-4861-AF9B-BAB5-ABBE614B3CDD";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "EC63D2AD-43A9-7DE1-A20D-CA85A9E525CB";
 	setAttr ".g" yes;
@@ -39051,7 +39141,15 @@ createNode reference -n "FireplaceMeshRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"FireplaceMeshRN"
 		"FireplaceMeshRN" 1
-		2 "|FireplaceMesh1:FireplaceMesh1" "translate" " -type \"double3\" 0.35470596343892158 0 0";
+		2 "|FireplaceMesh1:FireplaceMesh1" "translate" " -type \"double3\" 0.35470596343892158 0 0"
+		
+		"FireplaceMeshRN" 5
+		2 "FireplaceMesh1:WoodSurface" "baseDiffuseRoughness" " 0"
+		2 "FireplaceMesh1:WoodSurface" "specularRoughness" " 0.61085975170135498"
+		
+		2 "FireplaceMesh1:BrickSurface" "specularRoughness" " 1"
+		2 "FireplaceMesh1:LogSurface" "baseDiffuseRoughness" " 0"
+		2 "FireplaceMesh1:LogSurface" "specularRoughness" " 1";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "CoffeeTableMeshRN";
@@ -39093,8 +39191,8 @@ createNode reference -n "CoffeeTableMeshRN";
 		
 		2 "|CoffeeTableMesh1:CoffeeTableMesh" "scale" " -type \"double3\" 0.68135713284041022 0.68135713284041022 0.68135713284041022"
 		
-		"CoffeeTableMeshRN" 34
-		2 "|CoffeeTableMesh1:polySurface3" "translate" " -type \"double3\" 3.48205420835664592 -1.26499718427657859 1.24044138201683563"
+		"CoffeeTableMeshRN" 36
+		2 "|CoffeeTableMesh1:polySurface3" "translate" " -type \"double3\" 3.85482456003102181 -1.26499718427657859 1.24044138201683563"
 		
 		2 "|CoffeeTableMesh1:polySurface3" "scale" " -type \"double3\" 0.68194520852049323 0.68194520852049323 0.68194520852049323"
 		
@@ -39103,6 +39201,9 @@ createNode reference -n "CoffeeTableMeshRN";
 		2 "|CoffeeTableMesh1:polySurface3" "scalePivot" " -type \"double3\" 0 -8.5316376630117929e-08 0"
 		
 		2 "|CoffeeTableMesh1:polySurface3" "scalePivotTranslate" " -type \"double3\" 0 1.65603431650228616 0"
+		
+		2 "CoffeeTableMesh1:WoodSurface1" "baseDiffuseRoughness" " 0"
+		2 "CoffeeTableMesh1:WoodSurface1" "specularRoughness" " 0.62443441152572632"
 		
 		5 4 "CoffeeTableMeshRN" "CoffeeTableMesh1:openPBRSurface1SG.dagSetMembers" 
 		"CoffeeTableMeshRN.placeHolderList[1]" ""
@@ -39174,14 +39275,17 @@ createNode reference -n "SmallTableMeshRN";
 		
 		2 "|SmallTableMesh1:SmallTableMesh" "scale" " -type \"double3\" 0.55938792190189146 0.56338368434054142 0.55938792190189146"
 		
-		"SmallTableMeshRN" 4
+		"SmallTableMeshRN" 6
 		2 "|SmallTableMesh1:polySurface2" "translate" " -type \"double3\" 2.6928606311922838 0.39103704690933228 6.66032760299925997"
 		
 		2 "|SmallTableMesh1:polySurface2" "scale" " -type \"double3\" 0.56611410067600487 0.56611410067600487 0.56611410067600487"
 		
 		2 "|SmallTableMesh1:polySurface2" "rotatePivot" " -type \"double3\" 2.72066330909729004 0 2.88901400566101074"
 		
-		2 "|SmallTableMesh1:polySurface2" "scalePivot" " -type \"double3\" 2.72066330909729004 0 2.88901400566101074";
+		2 "|SmallTableMesh1:polySurface2" "scalePivot" " -type \"double3\" 2.72066330909729004 0 2.88901400566101074"
+		
+		2 "SmallTableMesh1:WoodSurface" "baseDiffuseRoughness" " 0"
+		2 "SmallTableMesh1:WoodSurface" "specularRoughness" " 0.61990952491760254";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "EndTableMeshRN";
@@ -39189,11 +39293,14 @@ createNode reference -n "EndTableMeshRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"EndTableMeshRN"
 		"EndTableMeshRN" 0
-		"EndTableMeshRN" 3
+		"EndTableMeshRN" 5
 		2 "|EndTableMesh1:EndTableMesh" "translate" " -type \"double3\" -8.77403308955354788 0.39103686809539795 -7.82408920881246939"
 		
 		2 "|EndTableMesh1:EndTableMesh" "rotate" " -type \"double3\" 0 -90 0"
-		2 "|EndTableMesh1:EndTableMesh" "scale" " -type \"double3\" 0.58301065452695688 0.58301065452695688 0.58301065452695688";
+		2 "|EndTableMesh1:EndTableMesh" "scale" " -type \"double3\" 0.58301065452695688 0.58301065452695688 0.58301065452695688"
+		
+		2 "EndTableMesh1:WoodSurface" "baseDiffuseRoughness" " 0"
+		2 "EndTableMesh1:WoodSurface" "specularRoughness" " 0.61990952491760254";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "CouchMeshRN";
@@ -39201,10 +39308,13 @@ createNode reference -n "CouchMeshRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"CouchMeshRN"
 		"CouchMeshRN" 0
-		"CouchMeshRN" 2
+		"CouchMeshRN" 4
 		2 "|CouchMesh1:pCube10" "translate" " -type \"double3\" -7.01271785493469668 -1.70546591281890869 2.11920126470119907"
 		
-		2 "|CouchMesh1:pCube10" "scale" " -type \"double3\" 1.27348160054247428 1.38946297799618446 1.22736552799858201";
+		2 "|CouchMesh1:pCube10" "scale" " -type \"double3\" 1.27348160054247428 1.38946297799618446 1.22736552799858201"
+		
+		2 "CouchMesh1:CouchFabric" "specularRoughness" " 1"
+		2 "CouchMesh1:WoodSurface" "specularRoughness" " 0.60180997848510742";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "PillowMeshRN";
@@ -39212,14 +39322,16 @@ createNode reference -n "PillowMeshRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PillowMeshRN"
 		"PillowMeshRN" 0
-		"PillowMeshRN" 4
+		"PillowMeshRN" 5
 		2 "|PillowMesh2:PillowMesh" "translate" " -type \"double3\" -7.25672919456131371 2.68823244154104746 -2.78637912401364796"
 		
 		2 "|PillowMesh2:PillowMesh" "rotate" " -type \"double3\" -26.53318107485123534 -35.18333659509983136 41.28146831839541164"
 		
 		2 "|PillowMesh2:PillowMesh" "scale" " -type \"double3\" 0.81632223119298708 0.81632223119298708 0.81632223119298708"
 		
-		2 "|PillowMesh2:PillowMesh" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
+		2 "|PillowMesh2:PillowMesh" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "PillowMesh2:PillowSurface" "specularRoughness" " 1";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "PillowMeshRN1";
@@ -39227,14 +39339,20 @@ createNode reference -n "PillowMeshRN1";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PillowMeshRN1"
 		"PillowMeshRN1" 0
-		"PillowMeshRN1" 4
+		"PillowMeshRN1" 9
 		2 "|PillowMesh3:PillowMesh" "translate" " -type \"double3\" -8.00102736835196993 2.71330408272539181 6.06268148990262734"
 		
 		2 "|PillowMesh3:PillowMesh" "rotate" " -type \"double3\" 8.67609004690784502 12.29713428312381218 32.13483177106610356"
 		
 		2 "|PillowMesh3:PillowMesh" "scale" " -type \"double3\" 0.80402436877292216 0.80402436877292216 0.80402436877292216"
 		
-		2 "|PillowMesh3:PillowMesh" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
+		2 "|PillowMesh3:PillowMesh" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "PillowMesh3:PillowSurface" "baseDiffuseRoughness" " 0"
+		2 "PillowMesh3:PillowSurface" "specularRoughness" " 1"
+		2 "PillowMesh3:PillowSurface" "specularRoughnessAnisotropy" " 0"
+		2 "PillowMesh3:PillowSurface" "fuzzWeight" " 0"
+		2 "PillowMesh3:PillowSurface" "fuzzRoughness" " 0.48416289687156677";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Plant2RN";
@@ -39255,7 +39373,7 @@ createNode reference -n "Plant2RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Plant2RN"
 		"Plant2RN" 0
-		"Plant2RN" 19
+		"Plant2RN" 23
 		2 "|Plant3:Plant2" "translate" " -type \"double3\" -3.90286078399958924 -11.15403703198424523 -8.32048912495368498"
 		
 		2 "|Plant3:Plant2" "rotate" " -type \"double3\" 0 220.5889731500847688 0"
@@ -39269,6 +39387,10 @@ createNode reference -n "Plant2RN";
 		
 		2 "|Plant3:Plant2" "scalePivotTranslate" " -type \"double3\" 0 16.86501922194017311 0"
 		
+		2 "Plant3:PlantSurface" "specularRoughness" " 0.50226247310638428"
+		2 "Plant3:DirtSurface" "specularRoughness" " 1"
+		2 "Plant3:WhitePotSurface" "specularRoughness" " 0.57918554544448853"
+		2 "Plant3:BrownPotSurface" "specularRoughness" " 0.84162896871566772"
 		5 3 "Plant2RN" "Plant3:openPBRSurface1SG.memberWireframeColor" "Plant2RN.placeHolderList[1]" 
 		""
 		5 4 "Plant2RN" "Plant3:openPBRSurface1SG.dagSetMembers" "Plant2RN.placeHolderList[2]" 
@@ -39300,7 +39422,7 @@ createNode reference -n "PictureFrame1RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PictureFrame1RN"
 		"PictureFrame1RN" 0
-		"PictureFrame1RN" 7
+		"PictureFrame1RN" 9
 		2 "|PictureFrame3:pCube1" "translate" " -type \"double3\" -10.88954079151148413 13.63242606029049853 -5.87186916082826826"
 		
 		2 "|PictureFrame3:pCube1" "rotate" " -type \"double3\" 0 90 0"
@@ -39312,7 +39434,11 @@ createNode reference -n "PictureFrame1RN";
 		
 		2 "|PictureFrame3:pCube1" "scalePivot" " -type \"double3\" 0 0 -0.49999972900104339"
 		
-		2 "|PictureFrame3:pCube1" "scalePivotTranslate" " -type \"double3\" 0 0 0.38954052051249355";
+		2 "|PictureFrame3:pCube1" "scalePivotTranslate" " -type \"double3\" 0 0 0.38954052051249355"
+		
+		2 "PictureFrame3:DarkerWoodSurface" "specularRoughness" " 0.71945703029632568"
+		
+		2 "PictureFrame3:Paper" "specularRoughness" " 0.71945703029632568";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "PictureFrame2RN";
@@ -39320,7 +39446,7 @@ createNode reference -n "PictureFrame2RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PictureFrame2RN"
 		"PictureFrame2RN" 0
-		"PictureFrame2RN" 5
+		"PictureFrame2RN" 7
 		2 "|PictureFrame4:pCube1" "translate" " -type \"double3\" -5.17999410997989251 14.07441693026400387 -9.89137589931487859"
 		
 		2 "|PictureFrame4:pCube1" "scale" " -type \"double3\" 3.5974085603710928 4.987569501514864 0.21903266773630503"
@@ -39329,7 +39455,11 @@ createNode reference -n "PictureFrame2RN";
 		
 		2 "|PictureFrame4:pCube1" "scalePivot" " -type \"double3\" 0 0 -0.49999987165963677"
 		
-		2 "|PictureFrame4:pCube1" "scalePivotTranslate" " -type \"double3\" 0 0 0.36020111124553567";
+		2 "|PictureFrame4:pCube1" "scalePivotTranslate" " -type \"double3\" 0 0 0.36020111124553567"
+		
+		2 "PictureFrame4:DarkerWoodFrame" "specularRoughness" " 0.82805430889129639"
+		
+		2 "PictureFrame4:Midna" "specularRoughness" " 0.56561088562011719";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "TVMeshRN";
@@ -39373,28 +39503,36 @@ createNode reference -n "KnickKnack3RN";
 	rename -uid "0B137123-497B-49A2-92A5-5597F85EB5DA";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"KnickKnack3RN"
-		"KnickKnack3RN" 0;
+		"KnickKnack3RN" 0
+		"KnickKnack3RN" 1
+		2 "KnickKnack3:WhiteCeramic" "specularRoughness" " 0.036199096590280533";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "KnickKnack4RN";
 	rename -uid "DBE0CA93-481F-3DE5-E97B-F1AEE5683BDD";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"KnickKnack4RN"
-		"KnickKnack4RN" 0;
+		"KnickKnack4RN" 0
+		"KnickKnack4RN" 1
+		2 "KnickKnack4:WhiteCeramic" "specularRoughness" " 0.05429864302277565";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "KnickKnack5RN";
 	rename -uid "9D5B057A-4C6A-745F-6BD9-9BA8982AEEF9";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"KnickKnack5RN"
-		"KnickKnack5RN" 0;
+		"KnickKnack5RN" 0
+		"KnickKnack5RN" 1
+		2 "KnickKnack5:WhiteCermaic" "specularRoughness" " 0.027149321511387825";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "KnickKnack6RN";
 	rename -uid "54887FDE-4058-24DF-5531-40BF3E2E4A81";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"KnickKnack6RN"
-		"KnickKnack6RN" 0;
+		"KnickKnack6RN" 0
+		"KnickKnack6RN" 1
+		2 "KnickKnack6:BlackPlastic" "specularRoughness" " 0.66515839099884033";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "sharedReferenceNode";
@@ -47162,7 +47300,9 @@ createNode polyTweakUV -n "polyTweakUV36";
 		 0.69338703 0.23635459 0.70419019;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "85DB6E38-41B9-E202-A0C6-7D967E2FCBAB";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.6.2";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=Shot_CameraShape;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;Interactive.FPS=16";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "B8CFFD22-4785-D756-99A9-0AA4D492634D";
 	setAttr ".ai_translator" -type "string" "gaussian";
@@ -51377,14 +51517,21 @@ createNode reference -n "Wall1RN";
 	rename -uid "D97BCA54-45E7-8E8A-0FD0-7C9F6845A8B0";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Wall1RN"
-		"Wall1RN" 0;
+		"Wall1RN" 0
+		"Wall1RN" 2
+		2 "|Wall5:Wall1" "translate" " -type \"double3\" 0 0.39103686809539795 0"
+		
+		2 "Wall5:CremePaint" "specularRoughness" " 0.50678735971450806";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Wall2RN";
 	rename -uid "C6D4D110-4298-44DA-E84A-F7B3C8F14A02";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Wall2RN"
-		"Wall2RN" 0;
+		"Wall2RN" 0
+		"Wall2RN" 2
+		2 "|Wall6:Wall2" "translate" " -type \"double3\" 0 0.3880608081817627 0"
+		2 "Wall6:WhitePaint" "specularRoughness" " 0.57918554544448853";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode polyMapCut -n "polyMapCut83";
@@ -52174,17 +52321,17 @@ createNode groupParts -n "groupParts3";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:290]";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "B933D032-47ED-2584-0AF8-0FAF21B0BD79";
+	rename -uid "83913EAC-478C-304C-788B-619CB69C2F0F";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -467.46029888511407 -288.09522664736232 ;
-	setAttr ".tgi[0].vh" -type "double2" 468.25394964722813 287.30157588524838 ;
+	setAttr ".tgi[0].vl" -type "double2" -467.46029888511418 -360.38644447565741 ;
+	setAttr ".tgi[0].vh" -type "double2" 700.79362294661428 358.00549218931559 ;
 	setAttr -s 2 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -278.88888549804688;
+	setAttr ".tgi[0].ni[0].x" -53.174591064453125;
 	setAttr ".tgi[0].ni[0].y" 177.77777099609375;
-	setAttr ".tgi[0].ni[0].nvs" 1971;
-	setAttr ".tgi[0].ni[1].x" -53.174591064453125;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -278.88888549804688;
 	setAttr ".tgi[0].ni[1].y" 177.77777099609375;
-	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[1].nvs" 1971;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -52207,6 +52354,8 @@ select -ne :defaultRenderUtilityList1;
 	setAttr -s 36 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 20 ".r";
+select -ne :lightList1;
+	setAttr -s 6 ".l";
 select -ne :defaultTextureList1;
 	setAttr -s 36 ".tx";
 select -ne :standardSurface1;
@@ -52224,9 +52373,16 @@ select -ne :initialParticleSE;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "openPBR_shader1";
 select -ne :defaultResolution;
+	setAttr ".w" 2048;
+	setAttr ".h" 2048;
 	setAttr ".pa" 1;
+	setAttr ".dar" 1;
+select -ne :defaultLightSet;
+	setAttr -s 6 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -52796,13 +52952,19 @@ connectAttr "groupParts1.og" "groupParts2.ig";
 connectAttr "groupId2.id" "groupParts2.gi";
 connectAttr "groupParts2.og" "groupParts3.ig";
 connectAttr "groupId3.id" "groupParts3.gi";
-connectAttr "CremePaint.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "openPBRSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "openPBRSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "CremePaint.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
 connectAttr "openPBRSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "CremePaint.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "directionalLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "spotLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "spotLightShape2.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape2.ltd" ":lightList1.l" -na;
+connectAttr "areaLightShape3.ltd" ":lightList1.l" -na;
 connectAttr "Plant1:extrudedSurfaceShape4.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Plant1:extrudedSurfaceShape5.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Plant1:extrudedSurfaceShape1.iog" ":initialShadingGroup.dsm" -na;
@@ -52810,4 +52972,10 @@ connectAttr "Plant1:extrudedSurfaceShape6.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Plant2:revolvedSurfaceShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Plant2:revolvedSurfaceShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Plant2:revolvedSurfaceShape3.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "directionalLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "spotLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "spotLight2.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight2.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight3.iog" ":defaultLightSet.dsm" -na;
 // End of Unit5B_MiniDiorama.ma
